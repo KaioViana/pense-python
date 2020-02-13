@@ -1,8 +1,20 @@
-def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
+def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=5454):
+    """Tenta resolver o teorema de Fermat atravês da recursividade. Se for resolvido imprime uma mensagem
+    dizendo que o impossível aconteceu XD. Caso não, ele tenta a quantidade de vezes informada.
+
+    :param a: valor cateto
+    :param b: valor cateto
+    :param c: valor hipotenusa
+    :param n: valor do expoente
+    :param conj: estrutura de dados do tipo set
+    :param tentativas: número de tentativas
+    :return: None
+    """
     from random import randint
 
+
     print('tentativas:', tentativas, 'comprimento do conjunto:', len(conj))
-    
+
     if tentativas == 0:
         print(str('Máximo de tentativas atingido!').upper())
         return None
@@ -30,6 +42,8 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
             n = randint(1, 10000)
 
             tupl = (a,b,c,n)
+
+            
         #input(str(f'Tupla {tupl} não contém no conjunto. ENTER para continuar: \n'))
 
         a = tupl[0]
@@ -41,8 +55,10 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
 
 
 def main():
-    print(check_fermat())
+    import sys
+    sys.setrecursionlimit(1000000000)
+    check_fermat()
 
 
 if __name__ == '__main__':
-    main()
+    help(check_fermat)
