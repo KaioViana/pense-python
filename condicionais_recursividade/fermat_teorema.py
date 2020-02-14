@@ -1,4 +1,16 @@
-def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=5454):
+def factorial(n):
+    """Calcula a fatorial com recursividade.
+
+    :param: n: fatorial
+    :return: fatorial de n
+    """
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n*factorial(n-1)
+
+
+def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
     """Tenta resolver o teorema de Fermat atravês da recursividade. Se for resolvido imprime uma mensagem
     dizendo que o impossível aconteceu XD. Caso não, ele tenta a quantidade de vezes informada.
 
@@ -61,4 +73,4 @@ def main():
 
 
 if __name__ == '__main__':
-    help(check_fermat)
+    check_fermat()
