@@ -1,16 +1,4 @@
-def factorial(n):
-    """Calcula a fatorial com recursividade.
-
-    :param: n: fatorial
-    :return: fatorial de n
-    """
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n*factorial(n-1)
-
-
-def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
+def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=50000):
     """Tenta resolver o teorema de Fermat atravês da recursividade. Se for resolvido imprime uma mensagem
     dizendo que o impossível aconteceu XD. Caso não, ele tenta a quantidade de vezes informada.
 
@@ -23,6 +11,7 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
     :return: None
     """
     from random import randint
+    from time import sleep
 
 
     print('tentativas:', tentativas, 'comprimento do conjunto:', len(conj))
@@ -31,10 +20,10 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
         print(str('Máximo de tentativas atingido!').upper())
         return None
 
-    a = randint(1, 10000)
-    b = randint(1, 10000)
-    c = randint(1, 10000)
-    n = randint(1, 10000)
+    a = randint(1, 10)
+    b = randint(1, 10)
+    c = randint(1, 10)
+    n = randint(1, 10)
 
     tupl = (a,b,c,n)
     
@@ -48,10 +37,12 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
         conj.update([tupl])
 
         while tupl in conj:
-            a = randint(1, 10000)
-            b = randint(1, 10000)
-            c = randint(1, 10000)
-            n = randint(1, 10000)
+            if len(conj) == 10**4:
+                print('\nCombinações maxímas atingidas', len(conj))
+            a = randint(1, 10)
+            b = randint(1, 10)
+            c = randint(1, 10)
+            n = randint(1, 10)
 
             tupl = (a,b,c,n)
 
@@ -63,6 +54,7 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=100):
         c = tupl[2]
         n = tupl[3]
         
+        sleep(1)
         check_fermat(a, b, c, n, conj, (tentativas - 1))
 
 
@@ -73,4 +65,4 @@ def main():
 
 
 if __name__ == '__main__':
-    check_fermat()
+    main()
