@@ -1,4 +1,4 @@
-def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=50000):
+def check_fermat(a=1, b=1, c=1, n=1, conj=set(), tentativas=50000):
     """Tenta resolver o teorema de Fermat atravês da recursividade. Se for resolvido imprime uma mensagem
     dizendo que o impossível aconteceu XD. Caso não, ele tenta a quantidade de vezes informada.
 
@@ -20,12 +20,7 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=50000):
         print(str('Máximo de tentativas atingido!').upper())
         return None
 
-    a = randint(1, 10)
-    b = randint(1, 10)
-    c = randint(1, 10)
-    n = randint(1, 10)
-
-    tupl = (a,b,c,n)
+    tupl = tuple()
     
     print(f'\nCÁLCULO:\nAB: {(a**2) + (b**2)} ==> C:{c**2}')
     print('IGUALDADE: ', (a**n) + (b**n) == c**n, '\n')
@@ -34,6 +29,7 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=50000):
         print(str('Holy Smokes, Fermat was wrong!').upper())
         return None
     else:
+        tupl = (a,b,c,n)
         conj.update([tupl])
 
         while tupl in conj:
@@ -48,13 +44,13 @@ def check_fermat(a=0, b=0, c=0, n=0, conj=set(), tentativas=50000):
 
             
         #input(str(f'Tupla {tupl} não contém no conjunto. ENTER para continuar: \n'))
-
+        conj.update([tupl])
         a = tupl[0]
         b = tupl[1]
         c = tupl[2]
         n = tupl[3]
         
-        sleep(1)
+        sleep(0.5)
         check_fermat(a, b, c, n, conj, (tentativas - 1))
 
 
