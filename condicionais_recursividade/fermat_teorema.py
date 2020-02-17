@@ -22,7 +22,7 @@ def check_fermat(a=1, b=1, c=1, n=1, conj=set(), tentativas=50000):
 
     tupl = tuple()
     
-    print(f'\nCÁLCULO:\nAB: {(a**2) + (b**2)} ==> C:{c**2}')
+    print(f'\nCÁLCULO:\nValor de n: {n}\nAB: {(a**2) + (b**2)} ==> C:{c**2}')
     print('IGUALDADE: ', (a**n) + (b**n) == c**n, '\n')
 
     if (a**n) + (b**n) == c**n and n > 2:
@@ -33,12 +33,13 @@ def check_fermat(a=1, b=1, c=1, n=1, conj=set(), tentativas=50000):
         conj.update([tupl])
 
         while tupl in conj:
-            if len(conj) == 10**4:
+            if len(conj) == 100**4:
                 print('\nCombinações maxímas atingidas', len(conj))
-            a = randint(1, 10)
-            b = randint(1, 10)
-            c = randint(1, 10)
-            n = randint(1, 10)
+                return None
+            a = randint(1, 100)
+            b = randint(1, 100)
+            c = randint(1, 100)
+            n = randint(1, 100)
 
             tupl = (a,b,c,n)
 
@@ -50,8 +51,8 @@ def check_fermat(a=1, b=1, c=1, n=1, conj=set(), tentativas=50000):
         c = tupl[2]
         n = tupl[3]
         
-        sleep(0.5)
-        check_fermat(a, b, c, n, conj, (tentativas - 1))
+        sleep(0.05)
+        return check_fermat(a, b, c, n, conj, (tentativas - 1))
 
 
 def main():
