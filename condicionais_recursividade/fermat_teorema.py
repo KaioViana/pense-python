@@ -1,5 +1,5 @@
 def check_fermat(a=1, b=1, c=1, n=1, conj=set(), tentativas=50000):
-    """Tenta resolver o teorema de Fermat atravês da recursividade. Se for resolvido imprime uma mensagem
+    """Tenta resolver o teorema de Fermat atravês da recursividade até a sua memória estorar hehe. Se for resolvido imprime uma mensagem
     dizendo que o impossível aconteceu XD. Caso não, ele tenta a quantidade de vezes informada.
 
     :param a: valor cateto
