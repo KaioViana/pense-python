@@ -64,7 +64,8 @@ def classify_triangle(is_triangle):
         # mostrando a classificação do triângulo
         print('CLASSIFICAÇÃO DO TRIÂNGULO:')
         print(classify)
-    else: print('Impossível formar um triângulo')
+    else: 
+        print('Impossível formar um triângulo')
 
 
 def main():
