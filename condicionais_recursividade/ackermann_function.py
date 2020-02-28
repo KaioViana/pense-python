@@ -1,4 +1,9 @@
 def ack(m, n):
+    """Cálcula a função de Ackermann
+    :param m: inteiro não negativo
+    :param n: inteiro não negativo
+    :return: retorno do cálculo recursivo
+    """
     # "guardiões"
     if not isinstance(n, int) or not isinstance(m, int):
         raise 'Esta função aceita apenas valores inteiros'
