@@ -12,7 +12,7 @@ def is_palindrome(s):
 
 def main():
     try:
-        s = str(input('Informe uma palavra: ')).strip()
+        s = input('Informe uma palavra: ').strip()
         print(is_palindrome(s))
     except Exception as error:
         print('Exceção encontrada:', error)
