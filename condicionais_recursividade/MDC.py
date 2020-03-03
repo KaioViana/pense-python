@@ -12,7 +12,11 @@ def mdc(a, b):
 def main():
     from random import randint
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 91d5975773d871396b0678e263d2fb4c1d5baacd
     a = randint(1, 1000)
     b = randint(1, 1000)
     print('A:', a)
@@ -22,5 +26,8 @@ def main():
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     help(mdc)
+=======
+>>>>>>> 91d5975773d871396b0678e263d2fb4c1d5baacd
     main()
