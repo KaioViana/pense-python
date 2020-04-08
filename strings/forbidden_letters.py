@@ -1,4 +1,9 @@
 def avoids(word, letters):
+    """Recebe uma palavra e um quantidade de letras proíbidas e verifica se a palavras às contêm
+    :param word: palavra a ser analisada
+    :param letters: letras proíbidas
+    :return: boolean
+    """
     for letter in word:
         if letter in letters:
             return False
