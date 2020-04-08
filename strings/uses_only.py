@@ -1,5 +1,5 @@
 def uses_only(word, letters):
-    """Recebe uma palavra e uma sequência de letras e verica se a palavra contêm somente as letras da sequência
+    """Recebe uma palavra e uma sequência de letras e verfica se a palavra contêm somente as letras da sequência
     :param word: palavra a ser analizada
     :param letters: sequência de letras
     :return: boolean
