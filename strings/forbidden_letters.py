@@ -24,7 +24,6 @@ def main():
             print('CONTÊM LETRAS PROÍBIDAS!')
         print('='*21)
         flag = str(input('DESEJA CONTINUAR ? (S/N)\n')).upper().strip()
-        print(flag)
 
         while flag != 'S' and flag != 'N':
             flag = str(input('COMANDO NÃO ENTENDIDO. INFORME NOVAMENTE: (S/N)\n')).upper().strip()
