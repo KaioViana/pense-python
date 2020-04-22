@@ -1,6 +1,7 @@
 def has_palindrome(string):
     """Recebe uma string e verifica se em algum lugar dela há um palíndromo.
     :param string: string a ser analizada
+    :var string2: variável onde pode conter o possível palíndromo
     :return: boolean"""
     from is_palindrome import is_palindrome
 
