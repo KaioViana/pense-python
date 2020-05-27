@@ -55,15 +55,21 @@ def main():
     from time import time
 
 
-    t = [1,2,3,4,5,6,7,8,9,10]
+    t = [] # lista para armazenamento
 
+    # lendo arquivo de palavras
+    with open('words.txt') as fin:
+        for line in fin.readlines():
+            word = line.strip()
+            t.append(word)
+              
     print(f'EXECUTANDO BUSCA BINÁRIA NORMAL>>>')
     time_start = time()
-    print(in_bisect(t, 8))
+    print(in_bisect(t, 'trivia'))
     print(f'BUSCA EXECUTADA EM {time()-time_start}')
     print(f'\nEXECUTANDO BUSCA BINÁRIA RECURSIVA>>>')
     time_start = time()
-    print(in_bisect_recursive(t, 8, 0, len(t)-1))
+    print(in_bisect_recursive(t, 'welcome', 0, len(t)-1))
     print(f'BUSCA EXECUTADA EM {time()-time_start}')
 
 
