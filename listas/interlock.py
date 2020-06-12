@@ -24,7 +24,7 @@ class MainThread(threading.Thread):
                 alterned_word += letter
                 print('***', alterned_word, self.word)
                 self.cv.wait()
-            
+
 
 def main():
     cv = threading.Condition() # objeto para controlar acesso e execução da thread
