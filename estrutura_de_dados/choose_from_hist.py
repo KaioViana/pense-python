@@ -14,11 +14,11 @@ def histogram(seq):
 
 def choose_from_hist(hist):
     """Escolhe aleatoriamente um valor em um histograma
-       e retorna sua probabilidade em proporção à frequência.
+       e mostra sua probabilidade em proporção à frequência.
         :param d: histograma a ser trabalhado
         :var t: tupla contendo chave/valor da escolha aleatória no histograma
         :var max_length: frequência máxima
-        :return: probabilidade em proporção à frequência
+        :return: None
     """
     from random import choice
 
@@ -26,13 +26,15 @@ def choose_from_hist(hist):
     t = choice(list(hist.items()))
     max_length = sum(hist.values())
 
-    return f'{t[0]} com probabilidade {t[1]}/{max_length} -> {(t[1]/max_length) * 100:.2f} %' 
+    print(f'{t[0]} com probabilidade {t[1]}/{max_length} -> {(t[1]/max_length) * 100:.2f} %')
+
+    return None
 
 
 def main():
-    seq = 'aab'
-    d = histogram(seq)
-    print(choose_from_hist(d))
+    seq = 'aabasdg'
+    hist = histogram(seq)
+    choose_from_hist(hist)
 
 
 if __name__ == '__main__':
