@@ -18,6 +18,7 @@ def anagram_set(file):
 
     for k in anagrams_map:
         anagrams_file.write(f'WORD:::: {k} MAP:::: {anagrams_map[k][1:]}\n')
+    anagrams_file.close()
         
     return anagrams_map
 
